@@ -1,5 +1,6 @@
 package kodmegadas;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class KodMegadas {
@@ -7,13 +8,15 @@ public class KodMegadas {
     static Scanner sc1 = new Scanner(System.in);
     static Scanner sc2 = new Scanner(System.in);
 
+    static int[] KodGombok = new int[9];
+    
     public static void main(String[] args) {
         
         
         int kod1 = KodBekeres();
         int kod2 = MegadottSzamBekeres();
         Ellenorzes(kod1, kod2);
-        
+        //KodGeneralas();
         
         
 
@@ -54,5 +57,21 @@ public class KodMegadas {
         int kod2 = sc2.nextInt();
         return kod2;
     }
+    
+     private static void KodGeneralas() {
+       Random rnd = new Random();
+       int random = rnd.nextInt(0,9);
+       int sortores =0;
+         for (int i = 0; i < 10; i++) {
+             
+             if (sortores == 3) {
+                 System.out.printf("\n"+i+"\t");
+                 sortores=0;
+             }
+             else{System.out.printf(i+"\t");}
+             sortores++;
+         }
+    }
+    
 
 }
